@@ -56,13 +56,18 @@ public class Main {
                 case "add":
                     System.out.println("Introduceti datele utilizatorului:\nNume:");
                     String nume,prenume,email,telefon;
+                    try{
                     nume=sc.nextLine();
                     System.out.println("Prenume:");
                     prenume=sc.nextLine();
                     System.out.println("Email:");
                     email=sc.nextLine();
                     System.out.println("PhoneNumber:");
-                    telefon=sc.nextLine();
+                    telefon=sc.nextLine();}
+                    catch(InputMismatchException e){
+                        System.out.println("Datele introduse nu sunt valide. Utilizatorul nu va fi adaugat...");
+                        break;
+                    }
                     guest=new Guest(nume,prenume,email,telefon);
                     g.add(guest);
                     break;
